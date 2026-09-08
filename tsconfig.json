@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "useDefineForClassFields": false,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "downlevelIteration": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "skipLibCheck": true,
+        "types": []
+    },
+    "include": ["src/**/*.ts", "src/models/**/*.ts", "tests/**/*.ts"]
+}

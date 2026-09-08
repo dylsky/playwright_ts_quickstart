@@ -1,0 +1,14 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/allure-results
+*.log
+/.xvfbcookie
+/allure-report
+.idea
+
+logs/*.log
+logs/*.meta
+

@@ -1,0 +1,7 @@
+.git
+allure-report
+allure-results
+node_modules
+playwright-report
+test-results
+*.log
