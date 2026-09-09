@@ -15,7 +15,8 @@ export class ParsingUtils {
                 return data as T;
             }
         } catch (e) {
-            throw new Error(e);
+            if (e instanceof Error) throw e;
+            throw new Error(String(e));
         }
         throw new Error(`${path} not found`);
     }

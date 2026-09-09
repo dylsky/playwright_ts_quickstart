@@ -1,13 +1,13 @@
 import dotenv from "dotenv";
 
 export class GlobalEntities {
-    private static instance: GlobalEntities;
+    private static instance: GlobalEntities | null = null;
     propertiesMap: Map<string, unknown> = new Map();
 
     private constructor() {}
 
     static getInstance(): GlobalEntities {
-        if (this.instance === null || this.instance === undefined) {
+        if (!this.instance) {
             this.instance = new GlobalEntities();
         }
 

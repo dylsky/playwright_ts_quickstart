@@ -29,18 +29,8 @@ export class BasicPage {
         await this.page.goto(normalizedLocation, { waitUntil: "domcontentloaded", timeout: timeout ?? parseInt(getEnvVar(EnvVars.GLOBAL_TIMEOUT)) });
     }
 
-    public static async goto(page: Page, location: string | URL, timeout?: number): Promise<void> {
-        const basePage = new BasicPage(page);
-        await basePage.goto(location, timeout);
-    }
-
     public async reload(timeout?: number) {
         await this.page.reload({ waitUntil: "domcontentloaded", timeout: timeout ?? parseInt(getEnvVar(EnvVars.GLOBAL_TIMEOUT)) });
-    }
-
-    public static async reload(page: Page, timeout?: number): Promise<void> {
-        const basePage = new BasicPage(page);
-        await basePage.reload(timeout);
     }
 
     public async goBack(timeout?: number) {

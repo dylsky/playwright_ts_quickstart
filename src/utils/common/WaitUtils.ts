@@ -11,9 +11,15 @@ export class WaitUtils {
         return new Promise(resolve => setTimeout(resolve, seconds * 1000));
     }
 
-    static getTimeoutAndConvertToSeconds(timeout: number | undefined): number {
+    /**
+     * Returns a timeout in milliseconds.
+     * If the provided value is less than 300 it is assumed to be in seconds and converted to ms;
+     * otherwise the global timeout from environment variables is used.
+     */
+    static getTimeoutMs(timeout: number | undefined): number {
         if (timeout != null && timeout < 300) {
             return timeout * 1000;
-        } else return parseInt(getEnvVar(EnvVars.GLOBAL_TIMEOUT) ?? "15000");
+        }
+        return parseInt(getEnvVar(EnvVars.GLOBAL_TIMEOUT), 10);
     }
 }
