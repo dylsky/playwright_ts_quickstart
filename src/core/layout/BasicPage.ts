@@ -18,10 +18,6 @@ export class BasicPage {
         return this;
     }
 
-    locatorFromTemplate(template: string, value: string, toReplace: string = "%s") {
-        return this.pageLocator.locator(template.replace(toReplace, value));
-    }
-
     public async goto(location: string | URL, timeout?: number): Promise<void> {
         let normalizedLocation: string;
         if (location instanceof URL) normalizedLocation = location.toString();

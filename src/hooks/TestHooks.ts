@@ -28,20 +28,20 @@ export class TestHooks {
 
     private static async runPreservingOrder(hookParameters: HookParameters, actions: HookAction[]) {
         let hadErrors: boolean = false;
-        let hadErrorsOnceAtLeastOnce: boolean = false;
         for (const action of actions) {
             if (!this.endActions.has(action)) {
-                hadErrors = await this.executeAction(hookParameters, action);
+                const result = await this.executeAction(hookParameters, action);
+                if (result) hadErrors = true;
             }
         }
         for (const action of actions) {
             if (this.endActions.has(action)) {
-                hadErrors = await this.executeAction(hookParameters, action);
+                const result = await this.executeAction(hookParameters, action);
+                if (result) hadErrors = true;
             }
         }
 
-        if (hadErrors) hadErrorsOnceAtLeastOnce = true;
-        return hadErrorsOnceAtLeastOnce;
+        return hadErrors;
     }
 
     private static async executeAction(hookParameters: HookParameters, action: HookAction) {
