@@ -1,0 +1,15 @@
+
+## Scripts
+
+| Script | Description |
+|---------|-------------|
+| `npm run lint` | Run ESLint |
+| `npm run lint-ci` | Run ESLint in CI mode (zero warnings) |
+
+## Tech Stack
+
+- [Playwright](https://playwright.dev/) – browser automation
+- [TypeScript](https://www.typescriptlang.org/) – language
+- [Allure](https://allurereport.org/) – test reporting
+- [ESLint](https://eslint.org/) – code linting
+- [Prettier](https://prettier.io/) – code formatting
